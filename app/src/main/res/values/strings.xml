@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">CurrenVerter</string>
+    <string name="select_date">Choose a history rate date</string>
+    <string name="currency_rates">Currency rates\t\t</string>
+    <string name="currency_conversion_rates">Currency conversion rates</string>
+    <string name="saved_conversion">Saved conversion\t\t</string>
+    <string name="saved_currency_conversion">Saved currency  conversion</string>
+    <string name="type_currency_name">type currency name</string>
+    <string name="select_currency">Select a currency to convert</string>
+    <string name="about">About\t\t</string>
+    <string name="from">From:</string>
+    <string name="to">To:</string>
+    <string name="convert">convert</string>
+    <string name="enter_amount">Enter the amount for conversion</string>
+    <string name="conversion_amounts">Conversion amounts</string>
+    <string name="doesnt_work_currently">\ndoesn`t work currently</string>
+    <string name="share">Share CurrenVerter \nwith your friends</string>
+    <string name="title_activity_cal">ActivityCal</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_currency_name">Enter currency name to find</string>
+    <string name="currency_name">Currency Name</string>
+    <string name="currency_rate">Currency rate</string>
+    <string name="convert_any_amount_to_any_currency">Convert any amount to any currency by entering the currency rate and the conversion amount</string>
+    <string name="total">This is the total:</string>
+    <string name="updated_on">Updated on</string>
+    <string name="rate_calculator">Rate calculator</string>
+    <string name="list_saved_rates">The list of saved rates </string>
+</resources>
