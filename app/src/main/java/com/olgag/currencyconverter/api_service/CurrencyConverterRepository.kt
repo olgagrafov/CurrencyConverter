@@ -2,6 +2,7 @@ package com.olgag.currencyconverter.api_service
 
 import android.annotation.SuppressLint
 import android.content.Context
+import com.olgag.currencyconverter.IS_INTERNEAT_AVAILABLE
 import com.olgag.currencyconverter.R
 import com.olgag.currencyconverter.model.*
 
@@ -72,13 +73,16 @@ class CurrencyConverterRepository {
                     return  l.sortedBy { country -> country.name }
                 } else {
                   //  Log.e("errRepository", "Failed to retrieve{$response.toString()}")
+                    IS_INTERNEAT_AVAILABLE = false
                     return emptyList()
                 }
             }
         } catch (e: Exception) {
             //Log.e("errRepository", "Failed to retrieve{$e.toString()}")
+            IS_INTERNEAT_AVAILABLE = false
             return emptyList()
         }
+        IS_INTERNEAT_AVAILABLE = false
         return emptyList()
     }
 }

@@ -11,6 +11,7 @@ import androidx.lifecycle.viewModelScope
 import com.olgag.currencyconverter.API_KEY
 import com.olgag.currencyconverter.DB_LAST_UPDATE
 import com.olgag.currencyconverter.IS_DB_UPDATED
+import com.olgag.currencyconverter.IS_INTERNEAT_AVAILABLE
 import com.olgag.currencyconverter.api_service.CurrencyConverterRepository
 import com.olgag.currencyconverter.db.CurrencyRepository
 import com.olgag.currencyconverter.db.CurrencyRoomDatabase
@@ -63,12 +64,10 @@ class CurrencyConverterViewModel(application: Application): ViewModel() {
         val sharedPreferences = application.getSharedPreferences("AppPrefs", Context.MODE_PRIVATE)
         DB_LAST_UPDATE = sharedPreferences.getString("lastUpdateTime", "")
         val currentTimeMillis = ConvertDate.setDateForApi(LocalDate.now())
-        if(currentTimeMillis > DB_LAST_UPDATE!!) {
+        if(currentTimeMillis > DB_LAST_UPDATE!! && IS_INTERNEAT_AVAILABLE) {
             allCurrencies.observeForever(allCurrenciesObserver)
             DB_LAST_UPDATE = currentTimeMillis
         }
-//        else
-//            IS_DB_UPDATED = true
     }
 
     override fun onCleared() {

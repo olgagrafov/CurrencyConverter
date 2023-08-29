@@ -18,7 +18,7 @@ data class FBHelper(val context: Context)  {
         try {
             val remoteConfig: FirebaseRemoteConfig = Firebase.remoteConfig
             val configSettings = remoteConfigSettings {
-                minimumFetchIntervalInSeconds = 3600
+                minimumFetchIntervalInSeconds = 600
             }
             remoteConfig.setConfigSettingsAsync(configSettings)
             remoteConfig.fetchAndActivate().addOnCompleteListener { task ->
