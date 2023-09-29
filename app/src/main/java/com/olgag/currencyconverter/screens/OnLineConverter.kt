@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.olgag.currencyconverter.COUNTRIES
 import com.olgag.currencyconverter.R
 import com.olgag.currencyconverter.components.*
+import com.olgag.currencyconverter.euroCurrency
 import com.olgag.currencyconverter.model.CurrencyRow
 import com.olgag.currencyconverter.model.Currency
 import com.olgag.currencyconverter.model.CurrencyConverterViewModel
@@ -84,7 +85,7 @@ fun OnLineConverter(openDrawer: () -> Unit, viewModel: CurrencyConverterViewMode
                     COUNTRIES?.let {
                         SearchBar(
                             list = it,
-                            setCurrency = { currency -> currencyFrom = currency },
+                            setCurrency = { currency -> currencyFrom = if(currency.currencyId.equals("EUR")) euroCurrency else currency },
                             active = isOpenSearchBarFrom,
                         )
                     }
@@ -136,7 +137,7 @@ fun OnLineConverter(openDrawer: () -> Unit, viewModel: CurrencyConverterViewMode
                     COUNTRIES?.let {
                         SearchBar(
                             list = it,
-                            setCurrency = { currency -> currencyTo = currency },
+                            setCurrency = { currency -> currencyTo = if(currency.currencyId.equals("EUR")) euroCurrency else currency },
                             active = isOpenSearchBarTo
                         )
                     }

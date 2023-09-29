@@ -26,6 +26,7 @@ import com.olgag.currencyconverter.api_service.FBHelper
 import com.olgag.currencyconverter.api_service.OnFBConfigListener
 import com.olgag.currencyconverter.components.*
 import com.olgag.currencyconverter.model.Country
+import com.olgag.currencyconverter.model.Currency
 import com.olgag.currencyconverter.model.MainViewModelFactory
 import com.olgag.currencyconverter.navigation.NavigationHost
 import com.olgag.currencyconverter.screens.LoaderShimmerEffect
@@ -38,6 +39,7 @@ var IS_INTERNEAT_AVAILABLE: Boolean = true
 var COUNTRIES: List<Country>? = emptyList()
 var DB_LAST_UPDATE: String? = null
 var IS_DB_UPDATED: Boolean = true
+var euroCurrency: Currency = Currency()
 
 class MainActivity : ComponentActivity(), OnFBConfigListener {
     private var isLoading = true
