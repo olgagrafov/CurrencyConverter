@@ -69,8 +69,8 @@ class CurrencyConverterRepository {
                             l[i].resourceId =  R.drawable.no_image
                     }
                     euroCurrency = Currency("European euro", "EUR", context.resources.getIdentifier("eu", "drawable", context.packageName))
-                    l.add( Country("BTC", "Bitcoin", "btc", "Bitcoin", euroCurrency.imgResourceId ))
-                    l.add( Country("EUR", "European euro", "eu", "United Europe", context.resources.getIdentifier("eu", "drawable", packageName)) )
+                    l.add( Country(euroCurrency.currencyId, euroCurrency.currencyName, "eu", "United Europe", euroCurrency.imgResourceId))
+                    l.add( Country("BTC", "Bitcoin", "btc", "Bitcoin", context.resources.getIdentifier("btc", "drawable", packageName)))
                   // Log.e("list",  l.size.toString() +  l[l.size-1].toString())//Country(currencyId=AFN, currencyName=Afghan afghani, id=AF, name=Afghanistan, resourceId=2131165307)
                     return  l.sortedBy { country -> country.name }
                 } else {
