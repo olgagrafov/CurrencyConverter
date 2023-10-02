@@ -5,8 +5,6 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.OffsetMapping
 import androidx.compose.ui.text.input.TransformedText
 import androidx.compose.ui.text.input.VisualTransformation
-import java.text.DecimalFormat
-import java.text.DecimalFormatSymbols
 import java.util.*
 
 class NumberCommaTransformation : VisualTransformation {
@@ -33,8 +31,7 @@ class NumberCommaTransformation : VisualTransformation {
 object PrintNumberHelper{
 
     fun printFloat(range: Float?): String {
-        val decimalFormat = DecimalFormat("#.##########",  DecimalFormatSymbols(Locale.US))
-        return decimalFormat.format(range)
+        return range?.toBigDecimal().toString()
     }
 
     fun printInt(numberToTransform: String): String{
@@ -117,4 +114,24 @@ class TransformationWithComa : VisualTransformation {
         )
     }
 }
+
+
+        val s = range.toString()
+        val ss = s.substring(0, s.indexOf('.')) // zelaia chast'
+      //  val pp = s.substring(s.indexOf('.') + 1)//range?.toBigDecimal()//?.remainder(BigDecimal.ONE)
+        val tt = range?.toBigDecimal()?.remainder(BigDecimal.ONE).toString()
+        val ff = range?.toBigDecimal().toString()
+        val pp = tt.substring(tt.indexOf('.') + 1)// disimal.naia chact'
+        var i = 0
+        while (i < pp.length) {
+            if(pp.get(i) > '0')
+                break;
+            i++;
+        }
+        Log.i("hh", i.toString())
+        //pp.filterIndexed { index, c ->  Log.i("hh", c + "-" + index.toString())  }
+        Log.i("fff",ss + " - " +   pp + " - " + s + " - " + tt + "--" + ff)
+
+       // val decimalFormat = DecimalFormat("#.##",  DecimalFormatSymbols(Locale.US))//DecimalFormat("#.##########",  DecimalFormatSymbols(Locale.US))\
+        //decimalFormat.format(range)
  */
