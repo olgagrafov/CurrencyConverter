@@ -20,7 +20,7 @@ sealed class TemperatureCoefficients(@StringRes val temperatureFrom: Int, @Strin
     object CelsiusKelvin: TemperatureCoefficients(R.string.celsius, R.string.kelvin, 273.15F)
     object FahrenheitKelvin: TemperatureCoefficients(R.string.fahrenheit, R.string.kelvin,  273.15F)
     object FahrenheitCelsius: TemperatureCoefficients(R.string.fahrenheit, R.string.celsius, 32F)
-    object KelvinFahrenheit: TemperatureCoefficients(R.string.kelvin, R.string.fahrenheit, -273.15F)
+    object KelvinFahrenheit: TemperatureCoefficients(R.string.kelvin, R.string.fahrenheit, 273.15F)
     object KelvinCelsius: TemperatureCoefficients(R.string.kelvin, R.string.celsius, 273.15F)
  }
 val temperatureList = listOf(
@@ -72,7 +72,7 @@ sealed class LengthCoefficients(@StringRes val lengthFrom: Int, @StringRes val l
     object InchCentimeter: LengthCoefficients(R.string.inch, R.string.centimeter, 2.54F)
     object CentimeterInch: LengthCoefficients(R.string.centimeter, R.string.inch, 0.39370078F)
     object InchMillimeter: LengthCoefficients(R.string.inch, R.string.millimeter, 25.4F)
-    object MillimeterInch: LengthCoefficients(R.string.millimeter, R.string.inch, 0.0032808399F)
+    object MillimeterInch: LengthCoefficients(R.string.millimeter, R.string.inch, 1/25.4F)
     object InchFeet: LengthCoefficients(R.string.inch, R.string.feet, 0.083333336F)
     object FeetInch: LengthCoefficients(R.string.feet, R.string.inch, 12F)
     object MeterYard: LengthCoefficients(R.string.meter, R.string.yard, 1.0936133F)

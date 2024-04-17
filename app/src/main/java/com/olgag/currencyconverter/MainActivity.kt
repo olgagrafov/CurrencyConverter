@@ -27,7 +27,7 @@ import com.olgag.currencyconverter.api_service.OnFBConfigListener
 import com.olgag.currencyconverter.components.*
 import com.olgag.currencyconverter.model.Country
 import com.olgag.currencyconverter.model.Currency
-import com.olgag.currencyconverter.model.MainViewModelFactory
+import com.olgag.currencyconverter.model.TabViewModelFactory
 import com.olgag.currencyconverter.navigation.NavigationHost
 import com.olgag.currencyconverter.screens.LoaderShimmerEffect
 import com.olgag.currencyconverter.utils.InternetAvailable
@@ -65,7 +65,7 @@ class MainActivity : ComponentActivity(), OnFBConfigListener {
                             val viewModel: CurrencyConverterViewModel = viewModel(
                                 it,
                                 "CurrencyConverterViewModel",
-                                MainViewModelFactory(
+                                TabViewModelFactory(
                                     LocalContext.current.applicationContext
                                             as Application
                                 )

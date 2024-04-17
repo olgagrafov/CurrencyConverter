@@ -41,7 +41,7 @@ fun TextNegativeNumber(
                 Icon(painter = painterResource(R.drawable.close), contentDescription = "")
             }
         },
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Phone),
         singleLine = true,
         keyboardActions = KeyboardActions(
             onDone = {

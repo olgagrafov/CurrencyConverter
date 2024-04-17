@@ -86,7 +86,7 @@ object PrintNumberHelper{
                 temperature = (temperature - coefficient) * 5/9
             }
             "Kelvin to Fahrenheit" -> {
-                //(0 K − 273,15) × 9/5 + 32 = -459,7 °F
+                //(0 K − 273,15) × 9/5 + 32 = -335,5 °F
                 temperature = (temperature - coefficient) * 9/5 + 32F
             }
             "Kelvin to Celsius" -> {

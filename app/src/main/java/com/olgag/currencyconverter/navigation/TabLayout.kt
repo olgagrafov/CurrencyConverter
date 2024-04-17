@@ -18,7 +18,7 @@ fun TabLayout(viewModel: TabViewModel) {
     Column(modifier = Modifier.fillMaxWidth()) {
         TabRow(selectedTabIndex = tabIndex.value!!) {
             tabs.forEachIndexed { index, tab ->
-                Tab(text = { Text(stringResource(id = tab.titleStringRes), style = MaterialTheme.typography.h1)},
+                Tab(text = { Text(stringResource(id = tab.titleStringRes), style = MaterialTheme.typography.subtitle1)},
                     selected = tabIndex.value!! == index,
                     onClick = { viewModel.updateTabIndex(index) },
                     icon = { Icon(painter = painterResource(tab.iconDrawableResource), contentDescription = null) }

@@ -72,6 +72,12 @@ val Typography = Typography(
         fontSize = 16.sp,
         color = Yellow700,
     ),
+    subtitle1 = TextStyle(
+        fontFamily = WorkSansFont,
+        fontWeight = FontWeight.W900,
+        fontSize = 12.sp,
+        color = White,
+    ),
     overline = TextStyle(
         fontFamily = WorkSansFont,
         fontWeight = FontWeight.ExtraBold,
