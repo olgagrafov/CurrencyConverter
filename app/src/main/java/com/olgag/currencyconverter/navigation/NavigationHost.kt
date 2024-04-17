@@ -46,6 +46,11 @@ fun NavigationHost(
                 navController = navController
             )
         }
+        composable(DrawerScreens.MetricConversions.route) {
+            MetricConversions(
+                openDrawer = { openDrawer() }
+            )
+        }
         composable(DrawerScreens.About.route) {
             About(
                 navController = navController

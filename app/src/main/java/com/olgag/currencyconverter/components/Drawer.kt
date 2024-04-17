@@ -15,13 +15,15 @@ import androidx.compose.ui.unit.dp
 
 sealed class DrawerScreens(@StringRes val title: Int, val route: String, @DrawableRes val drawableResource: Int) {
     object OnLineConverter: DrawerScreens(R.string.currency_rates, "online_converter", R.drawable.internet_available)
-    object OffLineConverter : DrawerScreens(R.string.saved_conversion, "offline_converter", R.drawable.internet_not_available)
-    object About : DrawerScreens( R.string.about, "about", R.drawable.about)
+    object OffLineConverter: DrawerScreens(R.string.saved_conversion, "offline_converter", R.drawable.internet_not_available)
+    object MetricConversions: DrawerScreens(R.string.metric_conversions, "metric_conversions", R.drawable.metric)
+    object About: DrawerScreens( R.string.about, "about", R.drawable.about)
 }
 
 private val screens = listOf(
     DrawerScreens.OnLineConverter,
     DrawerScreens.OffLineConverter,
+    DrawerScreens.MetricConversions,
     DrawerScreens.About
 )
 

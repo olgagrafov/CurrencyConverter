@@ -32,8 +32,8 @@ fun RateConversion(rate: Float?) {
     TextNumberCommaField(
         numberWithComa = currencyAmount,
         setNumberWithComa = { countOfCurrency -> currencyAmount = countOfCurrency },
-        labelName = R.string.conversion_amounts,
-        placeholder = R.string.enter_amount,
+        labelName = stringResource(id = R.string.conversion_amounts),
+        placeholder =  stringResource(id = R.string.enter_amount),
         modifier = Modifier.width(300.dp).padding(top = 30.dp, bottom = 30.dp)
     )
 

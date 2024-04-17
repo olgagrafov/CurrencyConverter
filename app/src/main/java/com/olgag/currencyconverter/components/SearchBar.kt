@@ -50,7 +50,7 @@ fun SearchBar(list: List<Country>, setCurrency: (Currency) -> Unit, active: Bool
                 onActiveChange = { active = it },
                 placeholder = { Text(
                     text = stringResource(id = R.string.type_currency_name),
-                    style = MaterialTheme.typography.h4) },
+                    style = MaterialTheme.typography.h6) },
                 leadingIcon = {
                     Icon(
                         Icons.Rounded.Search,

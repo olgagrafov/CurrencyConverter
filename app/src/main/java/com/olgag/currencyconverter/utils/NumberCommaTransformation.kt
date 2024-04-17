@@ -51,6 +51,55 @@ object PrintNumberHelper{
             floatValue?.toString() ?: ""
         }
     }
+
+    fun printMultiplicationAnswer(amount: String, coefficient: Float, conversionName: String): String {
+        val answer = ""
+        if (amount.isEmpty()) return answer
+        return answer.plus(amount).plus(" ")
+            .plus(conversionName.substringBefore(" to"))
+            .plus( "\nit will be:\n")
+            .plus(PrintNumberHelper.printFloat(amount.toLong() * coefficient))
+            .plus(" ").plus(conversionName.substringAfter(" to "))
+    }
+
+    fun printTemperatureAnswer(amount: String, coefficient: Float, conversionName: String): String {
+        val answer = ""
+        if (amount.isEmpty()) return answer
+        var temperature: Float = if (amount.substring(0,1).equals("-") && amount.length == 1) return answer
+            else if (amount.substring(0,1).equals("-") && amount.length > 1)  amount.substring(1).toFloat().unaryMinus()
+            else amount.toFloat()
+        when (conversionName) {
+            "Celsius to Fahrenheit" -> {
+                //(0 °C × 9/5) + 32 = 32 °F
+                temperature = (temperature * 9/5F) + coefficient
+            }
+            "Celsius to Kelvin" -> {
+                //0 °C + 273,15 = 273,15 K
+                temperature += coefficient
+            }
+            "Fahrenheit to Kelvin" -> {
+                //(0 °F − 32) × 5/9 + 273,15 = 255,372 K
+                temperature = (temperature - 32F) * 5/9 + coefficient
+            }
+            "Fahrenheit to Celsius" -> {
+                 // (0 °F − 32) × 5/9 = -17,78 °C
+                temperature = (temperature - coefficient) * 5/9
+            }
+            "Kelvin to Fahrenheit" -> {
+                //(0 K − 273,15) × 9/5 + 32 = -459,7 °F
+                temperature = (temperature - coefficient) * 9/5 + 32F
+            }
+            "Kelvin to Celsius" -> {
+                //0 K − 273,15 = -273,1 °C
+                temperature -= coefficient
+            }
+        }
+        return answer.plus(amount).plus(" ")
+            .plus(conversionName.substringBefore(" to"))
+            .plus( "\nit will be:\n")
+            .plus(temperature.toString())
+            .plus(" ").plus(conversionName.substringAfter(" to "))
+    }
 }
 
 //class NumberCommaTransformation : VisualTransformation {
