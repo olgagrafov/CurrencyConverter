@@ -12,7 +12,7 @@ class ApiConstants {
 }
 
 //usage : "https://free.currconv.com/others/usage?apiKey="
-//https://free.currconv.com/api/v7/currencies?apiKey=27efc5227c2b1e1e0a88
+//https://free.currconv.com/api/v7/currencies?apiKey=
 //https://free.currconv.com/api/v7/countries?apiKey=
 //https://free.currencyconverterapi.com/api/v5/convert?apiKey&compact=y&q=USD_BTC
 //https://free.currencyconverterapi.com/api/v5/convert?q=USD_BTC,BTC_USD&compact=ultra&date=2023-08-22&apiKey=

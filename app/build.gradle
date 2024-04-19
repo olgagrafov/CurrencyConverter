@@ -13,9 +13,9 @@ android {
         applicationId "com.olgag.currencyconverter"
         minSdk 26
         targetSdk 34
-        versionCode 25
+        versionCode 28
         versionName "2.0"
-        resConfigs("en")
+       // resConfigs("en")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
@@ -24,8 +24,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+           // shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

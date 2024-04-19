@@ -1,6 +1,7 @@
 package com.olgag.currencyconverter.api_service
 
 import android.content.Context
+import android.widget.Toast
 import androidx.compose.animation.core.MutableTransitionState
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.remoteconfig.FirebaseRemoteConfig
@@ -28,12 +29,14 @@ data class FBHelper(val context: Context)  {
                    // Log.d("TAG", "Remote config value: $API_KEY")
                 } else {
                    // Log.i("res: ", "Fetching and activating Remote Config values failed")
+                    Toast.makeText(context,  "Fetching and activating Remote Config values failed", Toast.LENGTH_SHORT).show()
                     listener.setApiKey(loader, true)
                 }
             }
             return true
         } catch (e: Exception) {
            // Log.i("res: ", e.toString())
+            Toast.makeText(context,  e.message, Toast.LENGTH_SHORT).show()
             listener.setApiKey(loader, true)
             return false
         }

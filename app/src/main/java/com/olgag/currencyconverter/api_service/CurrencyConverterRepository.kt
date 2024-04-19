@@ -2,6 +2,7 @@ package com.olgag.currencyconverter.api_service
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.widget.Toast
 import com.olgag.currencyconverter.IS_INTERNEAT_AVAILABLE
 import com.olgag.currencyconverter.R
 import com.olgag.currencyconverter.euroCurrency
@@ -27,6 +28,7 @@ class CurrencyConverterRepository {
                 return convertedValue.rate
             }
         } catch (e: Exception) {
+             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
             //Log.e("errRepository", "Failed to retrieve{$e.toString()}")
             return 0f
         }
@@ -43,6 +45,7 @@ class CurrencyConverterRepository {
                 return convertedValue.values.first().toFloat()
             }
         } catch (e: Exception) {
+            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
           //  Log.e("errRepository", "Failed to retrieve{$e.toString()}")
             return 0f
         }
@@ -75,12 +78,14 @@ class CurrencyConverterRepository {
                     return  l.sortedBy { country -> country.name }
                 } else {
                   //  Log.e("errRepository", "Failed to retrieve{$response.toString()}")
+                    Toast.makeText(context, "Failed to retrieve{$response.toString()}", Toast.LENGTH_SHORT).show()
                     IS_INTERNEAT_AVAILABLE = false
                     return emptyList()
                 }
             }
         } catch (e: Exception) {
             //Log.e("errRepository", "Failed to retrieve{$e.toString()}")
+            Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
             IS_INTERNEAT_AVAILABLE = false
             return emptyList()
         }
