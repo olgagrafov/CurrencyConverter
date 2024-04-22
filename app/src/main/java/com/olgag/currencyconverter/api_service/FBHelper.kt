@@ -26,16 +26,13 @@ data class FBHelper(val context: Context)  {
                 if (task.isSuccessful) {
                     API_KEY = remoteConfig.getString("key_api")
                     listener.setApiKey(loader, false)
-                   // Log.d("TAG", "Remote config value: $API_KEY")
                 } else {
-                   // Log.i("res: ", "Fetching and activating Remote Config values failed")
                     Toast.makeText(context,  "Fetching and activating Remote Config values failed", Toast.LENGTH_SHORT).show()
                     listener.setApiKey(loader, true)
                 }
             }
             return true
         } catch (e: Exception) {
-           // Log.i("res: ", e.toString())
             Toast.makeText(context,  e.message, Toast.LENGTH_SHORT).show()
             listener.setApiKey(loader, true)
             return false

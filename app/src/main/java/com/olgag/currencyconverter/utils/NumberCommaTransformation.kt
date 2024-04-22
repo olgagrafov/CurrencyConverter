@@ -54,7 +54,7 @@ object PrintNumberHelper{
 
     fun printMultiplicationAnswer(amount: String, coefficient: Float, conversionName: String): String {
         val answer = ""
-        if (amount.isEmpty()) return answer
+        if (amount.isEmpty() || conversionName.isEmpty()) return answer
         return answer.plus(amount).plus(" ")
             .plus(conversionName.substringBefore(" to"))
             .plus( "\nit will be:\n")
@@ -64,7 +64,7 @@ object PrintNumberHelper{
 
     fun printTemperatureAnswer(amount: String, coefficient: Float, conversionName: String): String {
         val answer = ""
-        if (amount.isEmpty()) return answer
+        if (amount.isEmpty() || conversionName.isEmpty()) return answer
         var temperature: Float = if (amount.substring(0,1).equals("-") && amount.length == 1) return answer
             else if (amount.substring(0,1).equals("-") && amount.length > 1)  amount.substring(1).toFloat().unaryMinus()
             else amount.toFloat()

@@ -13,9 +13,9 @@ android {
         applicationId "com.olgag.currencyconverter"
         minSdk 26
         targetSdk 34
-        versionCode 28
+        versionCode 29
         versionName "2.0"
-       // resConfigs("en")
+        resConfigs("en")
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
@@ -57,8 +57,8 @@ dependencies {
     implementation "androidx.compose.ui:ui:$compose_ui_version"
     //noinspection GradleDependency
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.6.2'
-    implementation 'androidx.compose.material3:material3:1.2.0'
+    implementation 'androidx.compose.material:material:1.6.5'
+    implementation 'androidx.compose.material3:material3:1.2.1'
     implementation 'com.google.android.material:material:1.11.0'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -78,7 +78,7 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1'
     // ViewModel
     implementation 'androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0'
-    implementation 'androidx.compose.runtime:runtime-livedata:1.6.2'
+    implementation 'androidx.compose.runtime:runtime-livedata:1.6.5'
     // Firebase Config
     implementation(platform('com.google.firebase:firebase-bom:32.1.1'))
     implementation 'com.google.firebase:firebase-config-ktx'

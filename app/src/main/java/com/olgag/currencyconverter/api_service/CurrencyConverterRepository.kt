@@ -29,7 +29,6 @@ class CurrencyConverterRepository {
             }
         } catch (e: Exception) {
              Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
-            //Log.e("errRepository", "Failed to retrieve{$e.toString()}")
             return 0f
         }
         return 0f
@@ -41,12 +40,10 @@ class CurrencyConverterRepository {
             if (usage.usage <= ApiConstants.API_REQUEST_PER_HOUR) {
                 val convertedValue: Map<String, Float> =
                     converterService.getConverterPerDay(currency, newDate).values.first() as Map<String, Float>
-               // Log.e("Repository", convertedValue.values.first().toString())
                 return convertedValue.values.first().toFloat()
             }
         } catch (e: Exception) {
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
-          //  Log.e("errRepository", "Failed to retrieve{$e.toString()}")
             return 0f
         }
         return 0f
@@ -56,7 +53,6 @@ class CurrencyConverterRepository {
     suspend fun getCountries(): List<Country> {
         try {
             val usage = countryService.getUsage()
-            //Log.e("usage", usage.usage.toString())
             if (usage.usage <= ApiConstants.API_REQUEST_PER_HOUR) {
                 val response = countryService.getCurrencies()
                 if (response.isSuccessful) {
@@ -74,17 +70,14 @@ class CurrencyConverterRepository {
                     euroCurrency = Currency("European euro", "EUR", context.resources.getIdentifier("eu", "drawable", context.packageName))
                     l.add( Country(euroCurrency.currencyId, euroCurrency.currencyName, "eu", "United Europe", euroCurrency.imgResourceId))
                     l.add( Country("BTC", "Bitcoin", "btc", "Bitcoin", context.resources.getIdentifier("btc", "drawable", packageName)))
-                  // Log.e("list",  l.size.toString() +  l[l.size-1].toString())//Country(currencyId=AFN, currencyName=Afghan afghani, id=AF, name=Afghanistan, resourceId=2131165307)
-                    return  l.sortedBy { country -> country.name }
+                   return  l.sortedBy { country -> country.name }
                 } else {
-                  //  Log.e("errRepository", "Failed to retrieve{$response.toString()}")
                     Toast.makeText(context, "Failed to retrieve{$response.toString()}", Toast.LENGTH_SHORT).show()
                     IS_INTERNEAT_AVAILABLE = false
                     return emptyList()
                 }
             }
         } catch (e: Exception) {
-            //Log.e("errRepository", "Failed to retrieve{$e.toString()}")
             Toast.makeText(context, e.message, Toast.LENGTH_SHORT).show()
             IS_INTERNEAT_AVAILABLE = false
             return emptyList()
